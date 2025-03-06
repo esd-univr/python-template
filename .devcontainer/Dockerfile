@@ -43,3 +43,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 # Poetry installation:
 RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN poetry self add poetry-dotenv-plugin
