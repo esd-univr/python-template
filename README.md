@@ -1,6 +1,6 @@
 TODO: 
-- [ ] Add the env file/configuration
-- [ ] Add the tests
+- [x] Add the env file/configuration
+- [x] Add the tests
 - [ ] Add the GitHub actions
 - [ ] Add the Dockerfile
 - [ ] Add the documentation
