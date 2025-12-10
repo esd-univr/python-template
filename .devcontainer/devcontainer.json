@@ -4,7 +4,6 @@
         "context": "."
     },
     "workspaceFolder": "/workspaces/python-template",
-    "postCreateCommand": "poetry install --all-extras",
     "customizations": {
         "vscode": {
             "settings": {
@@ -18,8 +17,7 @@
             },
             "extensions": [
                 "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-toolsai.jupyter"
+                "ms-python.vscode-pylance"            
             ]
         }
     }

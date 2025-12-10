@@ -1,5 +1,6 @@
 import logging
 from enum import Enum
+from typing import ClassVar
 
 # Configure logging
 logging.basicConfig(
@@ -8,9 +9,7 @@ logging.basicConfig(
 
 
 class Language(Enum):
-    """
-    Supported languages for the greeter class.
-    """
+    """Supported languages for the greeter class."""
 
     EN = "English"
     ES = "Spanish"
@@ -23,11 +22,14 @@ class Language(Enum):
 
 
 def get_language(language: str | Language) -> Language:
-    """
-    Get the corresponding language code from the Language enum.
+    """Get the corresponding language code from the Language enum.
 
-    :param language: The language code to look up.
-    :return: The Language enum corresponding to the language code
+    Args:
+        language (str | Language): The language code as a string or Language
+        enum.
+
+    Returns:
+        Language: The corresponding Language enum member.
     """
     if isinstance(language, Language):
         return language
@@ -36,16 +38,16 @@ def get_language(language: str | Language) -> Language:
     for lang in Language:
         if lang.name == language.upper():
             return lang
-    logging.error(f"Unsupported language code: {language}, defaulting to English.")
+    logging.error(
+        f"Unsupported language code: {language}, defaulting to English."
+    )
     return Language.EN
 
 
 class Greeter:
-    """
-    A simple greeter class that supports multiple languages.
-    """
+    """A simple greeter class that supports multiple languages."""
 
-    GREETINGS = {
+    GREETINGS: ClassVar[dict[Language, str]] = {
         Language.EN: "Hello",
         Language.ES: "Hola",
         Language.FR: "Bonjour",
@@ -56,21 +58,24 @@ class Greeter:
         Language.JA: "こんにちは",
     }
 
-    def __init__(self, name: str, language: str | Language = Language.EN):
-        """
-        Initialize the Greeter with a name and an optional language.
+    def __init__(
+        self, name: str, language: str | Language = Language.EN
+    ) -> None:
+        """Initialize the Greeter with a name and an optional language.
 
-        :param name: The name of the person to greet.
-        :param language: The language code for the greeting.
+        Args:
+            name (str): The name of the person to greet.
+            language (str | Language, optional): The language code for the
+            greeting. Defaults to Language.EN.
         """
         self.name = name
         self.language = get_language(language)
 
     def greet(self) -> str:
-        """
-        Return a greeting message in the specified language.
+        """Return a greeting message in the specified language.
 
-        :return: A greeting string.
+        Returns:
+            str: The greeting message.
         """
         if self.language == Language.IT:
             return f"{self.GREETINGS[self.language]}, Mario Potato!"
