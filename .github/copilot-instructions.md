@@ -1,6 +1,6 @@
----
-applyTo: '**'
----
+______________________________________________________________________
+
+## applyTo: '\*\*'
 
 # General Instructions
 
@@ -30,10 +30,14 @@ Python code style. The sections below highlight key points and project-specific 
 ### Docstrings
 
 - All modules, functions, classes, and methods should have docstrings.
+
 - Use triple double quotes `"""Docstring content"""`.
+
 - After the opening triple quotes, the first line should be a short summary of the object's purpose and should be placed
   on the next line.
+
 - The order is:
+
   - Summary line.
   - Blank line.
   - More detailed description (if necessary).
@@ -43,8 +47,11 @@ Python code style. The sections below highlight key points and project-specific 
   - Return value description (if applicable) (`Returns:`).
   - Blank line.
   - Any exceptions raised (if applicable) (`Raises:`).
+
 - Use imperative mood in the comments.
+
 - Follow reStructuredText or Google style for formatting docstrings.
+
 - The arguments name, type and description should be formatted as follows:
 
   ```python
@@ -57,9 +64,9 @@ Python code style. The sections below highlight key points and project-specific 
 
 - Imports should always be at the top of the file, after any module docstrings and `__future__` imports.
 - Imports should be grouped in the following order:
-    1. Standard library imports.
-    2. Third-party imports.
-    3. Local application/library specific imports.
+  1. Standard library imports.
+  1. Third-party imports.
+  1. Local application/library specific imports.
 - Each group should be separated by a blank line.
 - Use absolute imports over relative imports.
 
@@ -126,20 +133,20 @@ We follow a simplified Git-flow model for releases:
 Here is the release process:
 
 1. Prepare `develop` for Release:
-    - Ensure all desired features and bug fixes are merged into `develop`.
-    - Update `CHANGELOG.md` with changes for the new version, with the help of the command: `git log --pretty=format:"- (%h) %s" ...`
-    - Update version numbers in relevant project files (e.g., `pyproject.toml`, `package.json`).
-2. Make sure we start from a clean state:
-    - Make sure you are on the `develop`, and that we start from there.
-    - Perform final testing and bug fixing on this branch.
-3. Merge to `main` and Tag:
-    - Once the develop branch is stable, merge it into `main`:
-      1. `git checkout main`
-      2. `git merge --no-ff develop`
-    - Tag the release on `main`: `git tag -a v<version-number> -m "Release v<version-number>"`
-    - Ask the user to push the changes to the `main` branch, including tags: `git push origin main --tags`
-4. Merge back to `develop`:
-    - Merge the main branch back into `develop` to ensure `develop` has all release changes:
-      1. `git checkout develop`
-      2. `git merge --no-ff main`
-    - Ask the user to push the changes to `develop` branch: `git push origin develop`
+   - Ensure all desired features and bug fixes are merged into `develop`.
+   - Update `CHANGELOG.md` with changes for the new version, with the help of the command: `git log --pretty=format:"- (%h) %s" ...`
+   - Update version numbers in relevant project files (e.g., `pyproject.toml`, `package.json`).
+1. Make sure we start from a clean state:
+   - Make sure you are on the `develop`, and that we start from there.
+   - Perform final testing and bug fixing on this branch.
+1. Merge to `main` and Tag:
+   - Once the develop branch is stable, merge it into `main`:
+     1. `git checkout main`
+     1. `git merge --no-ff develop`
+   - Tag the release on `main`: `git tag -a v<version-number> -m "Release v<version-number>"`
+   - Ask the user to push the changes to the `main` branch, including tags: `git push origin main --tags`
+1. Merge back to `develop`:
+   - Merge the main branch back into `develop` to ensure `develop` has all release changes:
+     1. `git checkout develop`
+     1. `git merge --no-ff main`
+   - Ask the user to push the changes to `develop` branch: `git push origin develop`
