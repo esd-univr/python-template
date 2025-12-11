@@ -28,7 +28,7 @@ pip install python-dotenv
 
 This template includes the following software and tools:
 
-- [uv](https://docs.astral.sh/uv/) - An extremely fast Python package and project manager.
+- [uv](https://docs.astral.sh/uv/) - A Python package and project manager.
 - [Ruff](https://docs.astral.sh/ruff/) - A Python linter and code formatter.
 - [MyPy](https://mypy.readthedocs.io/en/stable/) - Static type checker for Python. It ensures that the variables and functions are used correctly.
 - [Pytest](https://docs.pytest.org/en/stable/) - Python testing framework. It is used to write and run tests for the project.
