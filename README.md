@@ -1,6 +1,6 @@
 # Python Template
 
-This template contains the standard structure for a Python project for the Electronic Systems Design (ESD) research group at the University of Verona. The template is designed to be used as a starting point for new python projects with support for dockerized development and deployment.
+This template contains the standard structure for a Python repository for the Glacier project. The template is designed to be used as a starting point for new python projects with support for dockerized development and deployment.
 
 ## Getting started
 
